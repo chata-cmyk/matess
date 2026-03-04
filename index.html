@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mates en Stock</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+    header { background: #654321; color: white; padding: 20px; text-align: center; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    .productos { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+    .producto { background: white; border: 1px solid #ccc; margin: 10px; padding: 15px; width: 220px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); }
+    .producto img { width: 150px; height: auto; margin-bottom: 10px; }
+    button { background: #654321; color: white; border: none; padding: 10px; cursor: pointer; }
+    button:hover { background: #43210f; }
+    #contacto { background: #fff; padding: 20px; text-align: center; }
+    footer { background: #eee; text-align: center; padding: 20px; }
+   
+    /* 📱 Responsive para pantallas chicas */
+    @media (max-width: 768px) {
+      .productos { flex-direction: column; align-items: center; }
+      .producto { width: 90%; }
+    }
+    
+    /* 🔍 Modal para ampliar imágenes */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-contenido {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+    }
+    .cerrar {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mates Artesanales</h1>
+    <nav>
+      <a href="#productos">Productos</a> | <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="productos" class="productos">
+    <div class="producto">
+      <img src="img.0.jpg" alt="Mate de madera" class="zoomable">
+      <h3>IMPERIAL ALPACA + TERMO 1L ACERO + BOMBILLA PICO DE LORO</h3>
+      <p>$39000</p>
+      <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20IMPERIAL%20ALPACA%20+%20TERMO%201L%20ACERO%20+%20BOMBILLA%20PICO%20DE%20LORO" target="_blank"> <button>Comprar</button> 
+      </a>
+    </div>
+
+    <div class="producto">
+      <img src="img.1...jpg" alt="Mate de cerámica" class="zoomable">
+      <h3>TERMO SYSTEM 1L + MATE NEGRO GRANDE TODO COLOR NEGRO</h3>
+      <p>$32000</p>
+      <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20TERMO%20SYSTEM%201L%20+%20MATE%20NEGRO%20GRANDE%20TODO%20COLOR%20NEGRO" target="_blank"> <button>Comprar</button> 
+      </a>
+    </div>
+
+    <div class="producto">
+      <img src="img.2..jpg" alt="Mate de cerámica" class="zoomable">
+      <h3>IMPERIAL GRABADO "BOCA LIBERTADORES"</h3>
+      <p>$26000</p>
+      <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20IMPERIAL%20GRABADO%20BOCA%20LIBERTADORES" target="_blank"> <button>Comprar</button> 
+      </a>
+    </div>
+
+    <div class="producto">
+      <img src="img.3...jpg" alt="Mate de cerámica" class="zoomable">
+      <h3>IMPERIAL GRABADO "LA MAGIA DE CONECTAR Y LA SUERTE DE COINCIDIR</h3>
+      <p>$26000</p>
+      <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20IMPERIAL%20GRABADO%20LA%20MAGIA%20DE%20CONECTAR%20Y%20LA%20SUERTE%20DE%20COINCIDIR" target="_blank"> <button>Comprar</button> 
+      </a>
+    </div>
+
+    <div class="producto">
+      <img src="img.4...jpg" alt="Mate de cerámica" class="zoomable">
+      <h3>IMPERIAL CON DIJE SOLDADO DE BOCA</h3>
+      <p>$34500</p>
+      <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20IMPERIAL%20CON%20DIJE%20SOLDADO%20DE%20BOCA" target="_blank"> <button>Comprar</button> 
+      </a>
+    </div>
+
+    <div class="producto">
+      <img src="img.5...jpg" alt="Mate de cerámica" class="zoomable">
+      <h3>IMPERIAL CRIOLLO GUARDA DE ALPACA - CALABAZA - CUERO REPUJADO BORRAVINO</h3>
+      <p>$37000</p>
+      <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20IMPERIAL%20CRIOLLO%20GUARDA%20DE%20ALPACA%20-%20CALABAZA%20-%20CUERO%20REPUJADO%20BORRAVINO" target="_blank"> <button>Comprar</button> 
+      </a>
+    </div>
+
+    <div class="producto">
+      <img src="img.6...jpg" alt="Mate de cerámica" class="zoomable">
+      <h3>IMPERIAL GUARDA DE ALPACA - CALABAZA - CUERO REPUJADO NEGRO</h3>
+      <p>$32000</p>
+      <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20IMPERIAL%20GUARDA%20DE%20ALPACA%20-%20CALABAZA%20-%20CUERO%20REPUJADO%20NEGRO" target="_blank"> <button>Comprar</button> 
+      </a>
+    </div>
+
+    <div class="producto">
+      <img src="img.7...jpg" alt="Mate de cerámica" class="zoomable">
+      <h3>IMPERIAL BOCA JUNIORS AZUL Y ORO (cuero croco azul - guarda y base de bronce) DIJE DE BRONCE</h3>
+      <p>$62000</p>
+      <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20IMPERIAL%20BOCA%20JUNIORS%20AZUL%20Y%20ORO%20CUERO%20CROCO%20AZUL%20GUARDA%20Y%20BASE%20DE%20BRONCE%20DIJE%20DE%20BRONCE" target="_blank"> <button>Comprar</button> 
+      </a>
+    </div>
+
+    <div class="producto">
+      <img src="img.8...jpg" alt="Mate de cerámica" class="zoomable">
+      <h3>IMPERIAL RIVER PLATE ROJO Y ORO (cuero croco rojo - guarda y base de alpaca) DIJE DE BRONCE</h3>
+      <p>$47000</p>
+      <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20IMPERIAL%20RIVER%20PLATE%20ROJO%20Y%20ORO%20CUERO%20CROCO%20ROJO%20GUARDA%20Y%20BASE%20DE%20ALPACA%20DIJE%20DE%20BRONCE" target="_blank"> <button>Comprar</button> 
+      </a>
+    </div>
+
+    <div class="producto">
+      <img src="img.9.9.jpg" alt="Mate de cerámica" class="zoomable">
+      <h3>CAMIONERO CALABAZACON PATAS DE ACERO</h3>
+      <p>$12000</p>
+      <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20el%20IMPERIAL%20ALPACA%20+%20TERMO%201L%20ACERO%20+%20BOMBILLA%20PICO%20DE%20LORO" target="_blank"> <button>Comprar</button> 
+      </a>
+    </div>
+
+    <div class="producto">
+  <img src="img.10.jpg" alt="Mate de cerámica" class="zoomable">
+  <h3>COMBO: IMPERIAL GUARDA ALPACA + canasta ECO + chulata + bombilla chulata</h3>
+  <p>$35000</p>
+  <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20el%20COMBO:%20IMPERIAL%20GUARDA%20ALPACA%20+%20canasta%20ECO%20+%20chulata%20+%20bombilla%20chulata" target="_blank">
+    <button>Comprar</button>
+  </a>
+</div>
+
+<div class="producto">
+  <img src="img.11.jpg" alt="Mate de cerámica" class="zoomable">
+  <h3>COMBO: CAMIONERO ALGARROBO + BOMBILLA CHATA + CANASTA ECO + YERBA + AZÚCAR</h3>
+  <p>$27000</p>
+  <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20comprar%20el%20COMBO:%20CAMIONERO%20ALGARROBO%20+%20BOMBILLA%20CHATA%20+%20CANASTA%20ECO%20+%20YERBA%20+%20AZÚCAR" target="_blank">
+    <button>Comprar</button>
+  </a>
+</div>
+  </section>
+
+  <!-- 🔍 Modal oculto --> 
+  <div id="modal" class="modal"> 
+    <span class="cerrar">&times;</span> 
+    <img class="modal-contenido" id="imagen-grande"> 
+  </div> 
+  
+  <section id="contacto">
+  <h2>Contacto</h2>
+  <p>Escribinos a <a href="mailto:ventas@mates.com"></a></p>
+  <p>
+    WhatsApp: 
+    <a href="https://wa.me/5493884554179?text=Hola,%20quiero%20más%20información%20sobre%20los%20productos" target="_blank">
+      +54 9 388 455 4179
+    </a>
+  </p>
+</section>
+
+
+  <footer>
+    <p>© 2026 Mates Artesanales</p>
+  </footer>
+  
+  <!-- 📌 Script para ampliar imágenes --> 
+   <script> 
+   const modal = document.getElementById("modal"); 
+   const modalImg = document.getElementById("imagen-grande"); 
+   const cerrar = document.getElementsByClassName("cerrar")[0]; 
+   
+   document.querySelectorAll(".zoomable").forEach(img => { 
+    img.onclick = function() { 
+      modal.style.display = "block"; 
+      modalImg.src = this.src; 
+      } }); 
+      
+      cerrar.onclick = function() { 
+        modal.style.display = "none"; 
+        } 
+        
+        // Cerrar modal al hacer clic fuera de la imagen 
+        window.onclick = function(event) { 
+          if (event.target == modal) { 
+            modal.style.display = "none"; 
+            } 
+        } 
+      </script>
+</body>
+</html>
+
